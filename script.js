@@ -44,7 +44,7 @@ document.getElementById("Traineau").addEventListener("click", function() {
     }
 });
 
-let NbEmbalage = 0
+let NbEmbalage = 0;
 let Countgift_pack = 100;
 let Nbgift_pack = 0;
 
@@ -159,4 +159,38 @@ document.getElementById("give").addEventListener("click", function() {
     alert("Bon... ce bouton c'est juste pour le dev... c'est de la triche un peu non ?");
     console.log("TRICHEUR !!!");
     updateDisplay();
-});  
+});
+
+// Fonction pour mesurer le temps de réponse du serveur
+async function measureServerResponseTime(url) {
+    console.time("Server Response Time"); // Démarre le chronomètre
+
+    try {
+        // Effectue une requête HTTP GET vers le serveur
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+
+        console.timeLog("Server Response Time", "Requête réussie"); // Affiche le temps intermédiaire
+    } catch (error) {
+        console.error("Erreur lors de la requête:", error.message);
+    } finally {
+        console.timeEnd("Server Response Time"); // Termine et affiche le temps total
+    }
+}
+
+// Fonction pour exécuter la mesure toutes les 60 secondes
+function startMonitoring(url, interval = 60000) {
+    console.log(`Démarrage de la surveillance du serveur : ${url}`);
+    setInterval(() => {
+        measureServerResponseTime(url);
+    }, interval);
+}
+
+// URL du serveur à surveiller
+const serverUrl = "https://louis-gllt.github.io/clicker-upgrade/";
+
+// Démarre la surveillance toutes les 60 secondes
+startMonitoring(serverUrl);
