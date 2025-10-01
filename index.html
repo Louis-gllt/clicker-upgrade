@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Père_noël-removebg-preview.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <title>
         Cadeaux Clicker
     </title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>
+<header>
         🎅 Cadeaux Clicker 🎁
-        <button class="reset" id="Reset">Reset</button>
-    </h1>
-    <p>----------------------------------------------------------------------------------</p>
+</header>
+<body>
+    <hr>
     <p>
         <h2>
             <p>Clique sur le Père Noël pour créer des cadeaux !</p>
@@ -27,12 +29,12 @@
             <button id="BoutonPereNoel">
                 <img src="Père_noël-removebg-preview.png" alt="Père Noël">
             </button>
-            <p>Nombre de cadeaux : <span id="NbCadeaux">0</span></p>
-            <p>Nombre d' embalages : <span id="NbEmbalage">0</span></p>
+            <p class="para">Nombre de cadeaux : <span id="NbCadeaux">0</span></p>
+            <p class="para">Nombre d' embalages : <span id="NbEmbalage">0</span></p>
         </p>
     </p>
 
-    <p>----------------------------------------------------------------------------------</p>
+    <hr>
         <p>
             <button id="MachineMagique">
                 <p>Acheter une machine magique ⚙️ (Coût : 50 Cadeaux)</p>
@@ -47,11 +49,15 @@
                 <p>Nombre de supers traîneaux : <span id="NbTraineau">0</span></p>
             </button>
     </p>
-    <p>----------------------------------------------------------------------------------</p>
+    <hr>
     <button class = "Bouton_embalage", id="package">
         <p>Embaler un cadeaux 🎁 (Coût : 100 Embalages) </p>
         <p>Nombre de Cadeaux emballés : <span id="Nbgift_pack">0</span></p>
     </button>
-    <p>----------------------------------------------------------------------------------</p>
-</body>
+    <hr>
+<footer>
+    <p>© 2025 - Louis Guilleminot<button class="reset" id="Reset">Reset</button></p>
+</footer>
+
+</body> 
 </html>
