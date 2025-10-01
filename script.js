@@ -45,7 +45,6 @@ document.getElementById("Traineau").addEventListener("click", function() {
 });
 
 let NbEmbalage = 0
-
 let Countgift_pack = 100;
 let Nbgift_pack = 0;
 
@@ -60,7 +59,7 @@ document.getElementById("package").addEventListener("click", function() {
 
 function updateGifts() {
     // Production par machine magique
-    NbCadeaux += NbMachineMagique * 0.5;
+    NbCadeaux += NbMachineMagique * 1;
     NbCadeaux += NbLutin * 7;
     NbEmbalage += NbTraineau * 0.5;
     NbEmbalage += Nbgift_pack * 1;
@@ -148,5 +147,16 @@ document.getElementById("Reset").addEventListener("click", function() {
     cookie : NbEmbalage = 0;
     cookie : Nbgift_pack = 0;
     updateDisplay();
-    
 });
+
+document.getElementById("give").addEventListener("click", function() {
+    cookie : NbCadeaux = 1000;
+    cookie : NbMachineMagique = 10;
+    cookie : NbLutin = 10;
+    cookie : NbTraineau = 10;
+    cookie : NbEmbalage = 1000;
+    cookie : Nbgift_pack = 10;
+    alert("Bon... ce bouton c'est juste pour le dev... c'est de la triche un peu non ?");
+    console.log("TRICHEUR !!!");
+    updateDisplay();
+});  
